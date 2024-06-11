@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+*.nosync
+
+sh.exe.stackdump
+
+*.log
+
+# npm
+package-lock.json
+node_modules
