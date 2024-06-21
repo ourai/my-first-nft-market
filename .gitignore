@@ -4,7 +4,14 @@
 
 sh.exe.stackdump
 
+# Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # npm
 package-lock.json
@@ -12,16 +19,20 @@ node_modules
 .env
 
 # Hardhat files
-/cache
-/artifacts
+/apps/blockchain/cache
+/apps/blockchain/artifacts
 
 # TypeChain files
-/typechain
-/typechain-types
+/apps/blockchain/typechain
+/apps/blockchain/typechain-types
 
 # solidity-coverage files
-/coverage
-/coverage.json
+/apps/blockchain/coverage
+/apps/blockchain/coverage.json
 
 # Hardhat Ignition default folder for deployments against a local node
 ignition/deployments/chain-31337
+
+dist
+dist-ssr
+*.local
