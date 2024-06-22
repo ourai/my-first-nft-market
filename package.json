@@ -10,6 +10,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "node .knosys/scripts serve"
+    "start": "node .knosys/scripts serve",
+    "deploy": "node .knosys/scripts deploy"
   }
 }

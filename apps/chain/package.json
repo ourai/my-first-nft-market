@@ -31,6 +31,6 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "start": "hardhat node",
-    "deploy": "hardhat ignition deploy ./ignition/modules/Lock.ts --network localhost"
+    "deploy": "hardhat ignition deploy"
   }
 }

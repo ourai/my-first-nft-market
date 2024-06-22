@@ -1,23 +1,13 @@
-const { existsSync } = require('fs');
-const { execSync } = require('child_process');
-const { resolveAppPath } = require('../helper');
+const { createAppScriptExecutor } = require('../helper');
 
 module.exports = {
-  execute: (app = 'web') => {
-    const appPath = resolveAppPath(app);
-
-    if (!existsSync(appPath)) {
-      return;
-    }
-
-    const opts = { cwd: appPath, stdio: 'inherit' };
-
+  execute: createAppScriptExecutor(({ app, exec }) => {
     if (app === 'web') {
-      return execSync('pnpm run dev', opts);
+      return exec('pnpm run dev');
     }
 
     if (app === 'chain') {
-      return execSync('pnpm start', opts);
+      return exec('pnpm start');
     }
-  },
+  }),
 };
