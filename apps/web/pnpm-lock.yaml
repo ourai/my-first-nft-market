@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ant-design/web3': ^1.15.1
+  '@ant-design/web3-assets': ^1.9.0
   '@ant-design/web3-ethers': ^1.1.3
   '@types/react': ^18.3.3
   '@types/react-dom': ^18.3.0
@@ -20,6 +21,7 @@ specifiers:
 
 dependencies:
   '@ant-design/web3': 1.15.1_pujlsuhulvt4bckln4fttr6bgi
+  '@ant-design/web3-assets': 1.9.0_pujlsuhulvt4bckln4fttr6bgi
   '@ant-design/web3-ethers': 1.1.3_ixnqfyjsjwnz2p4e36362lnhda
   antd: 5.18.3_nnrd3gsncyragczmpvfhocinkq
   ethers: 6.13.1
@@ -1269,6 +1271,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
+      napi-wasm: 1.1.0
     dev: false
     bundledDependencies:
       - napi-wasm
@@ -4076,6 +4079,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /napi-wasm/1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: false
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}

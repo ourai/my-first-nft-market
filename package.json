@@ -3,5 +3,13 @@
   "version": "0.0.0",
   "description": "Ouraiverse in Web3 world.",
   "private": true,
-  "scripts": {}
+  "devDependencies": {
+    "@knosys/sdk": "^0.0.3",
+    "@ntks/toolbox": "^0.0.6",
+    "ksio": "^0.0.3"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "start": "node .knosys/scripts serve"
+  }
 }
