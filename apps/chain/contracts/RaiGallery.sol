@@ -36,6 +36,10 @@ contract RaiGallery is ReentrancyGuard {
     _payment = IERC20(coinAddr_);
   }
 
+  function isListing(address nftContract, uint256 tokenId) external view returns (bool) {
+    return _listedNfts[nftContract][tokenId].listing;
+  }
+
   function sell(address nftContract, uint256 tokenId, uint256 price) external {
     IERC721 nft = IERC721(nftContract);
     address seller = msg.sender;

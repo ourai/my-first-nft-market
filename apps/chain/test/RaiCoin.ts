@@ -2,15 +2,10 @@ import { loadFixture } from '@nomicfoundation/hardhat-toolbox/network-helpers';
 import { ethers } from 'hardhat';
 import { expect } from 'chai';
 
-const INITIAL_SUPPLY = 1_000_000;
-const COIN_DECIMALS = 2;
+import { INITIAL_SUPPLY, COIN_DECIMALS, resolveAmount } from './helper';
 
 function resolveExpectedTotal(decimals: number | bigint = COIN_DECIMALS) {
-  return INITIAL_SUPPLY * Math.pow(10, Number(decimals));
-}
-
-function resolveAmount(amountWithoutDecimals: number) {
-  return amountWithoutDecimals * Math.pow(10, COIN_DECIMALS);
+  return resolveAmount(INITIAL_SUPPLY, decimals);
 }
 
 describe('RaiCoin', () => {

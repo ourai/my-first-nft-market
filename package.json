@@ -11,6 +11,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "start": "node .knosys/scripts serve",
+    "test": "node .knosys/scripts test",
     "deploy": "node .knosys/scripts deploy"
   }
 }
