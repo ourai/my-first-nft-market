@@ -18,9 +18,19 @@ contract RaiGallery is ReentrancyGuard {
 
   mapping(address => mapping(uint256 => NftItem)) private _listedNfts;
 
-  event NftListed(address seller, address nftContract, uint256 tokenId, uint256 price);
+  event NftListed(
+    address indexed seller,
+    address indexed nftContract,
+    uint256 indexed tokenId,
+    uint256 price
+  );
 
-  event NftSold(address buyer, address nftContract, uint256 tokenId, uint256 price);
+  event NftSold(
+    address indexed buyer,
+    address indexed nftContract,
+    uint256 indexed tokenId,
+    uint256 price
+  );
 
   constructor(address coinAddr_) {
     _payment = IERC20(coinAddr_);
@@ -31,6 +41,7 @@ contract RaiGallery is ReentrancyGuard {
     address seller = msg.sender;
 
     require(nft.ownerOf(tokenId) == seller, "You're not the owner of the NFT.");
+    require(price > 0, "Price must be greater thant 0.");
     require(nft.isApprovedForAll(seller, address(this)), "Contract isn't approved.");
 
     _listedNfts[nftContract][tokenId] = NftItem(seller, nftContract, tokenId, price, true);
