@@ -1,10 +1,12 @@
-type Address = string;
+type AddressHash = string;
 
 type NftItem = {
-  seller: Address;
-  contract: Address;
+  seller: AddressHash;
+  nftContract: AddressHash;
   tokenId: number;
+  tokenUrl: string;
   price: bigint;
+  listedAt: bigint;
 }
 
-export type { Address, NftItem }
+export type { AddressHash, NftItem }
