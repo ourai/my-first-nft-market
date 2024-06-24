@@ -1,18 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import { ERC721URIStorage, ERC721 } from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract RaiE is ERC721URIStorage {
+contract RaiE is ERC721 {
   uint256 private _totalCount;
 
-  constructor() ERC721("RaiE", "RAIE") {}
+  constructor() ERC721("RaiE", "RAIE") {
+    _totalCount++;
+  }
 
-  function mint(address to, string memory tokenUrl) external returns (uint256) {
-    uint256 tokenId = ++_totalCount;
+  function mint() external returns (uint256) {
+    uint256 tokenId = _totalCount;
 
-    _safeMint(to, tokenId);
-    _setTokenURI(tokenId, tokenUrl);
+    _safeMint(msg.sender, tokenId);
+
+    _totalCount++;
 
     return tokenId;
   }
