@@ -12,7 +12,6 @@ function NftCardFooter(props: NftCardFooterProps) {
   return (
     <>
       <Address address={dataSource.nftContract} ellipsis={{ headClip: 8, tailClip: 6 }} copyable />
-      <div>#{Number(dataSource.tokenId)}</div>
       <Address address={dataSource.seller} ellipsis={{ headClip: 8, tailClip: 6 }} copyable />
       <div>{dayjs(Number(dataSource.listedAt) * 1000).format('YYYY-MM-DD HH:mm:ss')}</div>
     </>

@@ -5,7 +5,7 @@ import { parseUnits } from 'viem'
 import { Address, useAccount } from '@ant-design/web3'
 
 import { RAIE_ADDR, RAIG_ADDR } from '../../constants'
-import abis from '../../abis'
+import { genNftFuncVars, genGalleryFuncVars } from '../../utils'
 
 function SellButton() {
   const [dialogShown, setDialogShown] = useState(false)
@@ -34,28 +34,20 @@ function SellButton() {
       return messageApi.warning('NFT price can not be 0.')
     }
 
-    writeContractAsync({
-      abi: abis.RaiE,
-      address: RAIE_ADDR,
-      functionName: 'setApprovalForAll',
-      args: [RAIG_ADDR, true]
-    }).then(() => writeContractAsync({
-        abi: abis.RaiGallery,
-        address: RAIG_ADDR,
-        functionName: 'sell',
-        args: [RAIE_ADDR, values.tokenId, parseUnits(`${values.price}`, 2), values.url]
-      }).then(res => {
-        console.log('sell success: ', res)
-        messageApi.success('Sell success')
-        handleClose()
-      }).catch(err => {
+    writeContractAsync(genNftFuncVars('setApprovalForAll', [RAIG_ADDR, true]))
+      .then(() => writeContractAsync(genGalleryFuncVars('sell', [RAIE_ADDR, values.tokenId, parseUnits(`${values.price}`, 2), values.url]))
+        .then(res => {
+          console.log('sell success: ', res)
+          messageApi.success('Sell success')
+          handleClose()
+        }).catch(err => {
+          console.log('sell failed', err.message)
+          messageApi.error('Sell failed')
+        })
+      ).catch(err => {
         console.log('sell failed', err.message)
         messageApi.error('Sell failed')
       })
-    ).catch(err => {
-      console.log('sell failed', err.message)
-      messageApi.error('Sell failed')
-    })
   }
 
   return (

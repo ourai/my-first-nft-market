@@ -119,6 +119,7 @@ contract RaiGallery is ReentrancyGuard {
 
     nft.safeTransferFrom(targetNft.seller, buyer, tokenId);
 
+    _listedNfts[nftContract][tokenId].seller = buyer;
     _listedNfts[nftContract][tokenId].listing = false;
 
     emit NftSold(buyer, nftContract, tokenId, targetNft.price);

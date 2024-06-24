@@ -7,6 +7,7 @@ type NftItem = {
   tokenUrl: string;
   price: bigint;
   listedAt: bigint;
+  listing: boolean;
 }
 
 export type { AddressHash, NftItem }
