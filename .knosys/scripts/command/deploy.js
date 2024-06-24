@@ -9,7 +9,7 @@ module.exports = {
       return;
     }
 
-    const [moduleName, networkName] = args;
+    const [moduleName, networkName, needReset] = args;
     const moduleRelativePath = `./ignition/modules/${moduleName}.ts`;
 
     if (!existsSync(joinPath(appRoot, moduleRelativePath))) {
@@ -20,6 +20,10 @@ module.exports = {
 
     if (networkName) {
       cmds.push(`--network ${networkName}`);
+    }
+
+    if (needReset) {
+      cmds.push('--reset');
     }
 
     return exec(cmds.join(' '));
