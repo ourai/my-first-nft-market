@@ -35,7 +35,7 @@ function NftList() {
     }
 
     if (!nft.listing) {
-      return messageApi.warning(`NFT #${Number(nft.tokenId)} is not for sale.`)
+      return messageApi.warning(`NFT ${nft.nftContract}#${Number(nft.tokenId)} is not for sale.`)
     }
 
     const args = [nft.nftContract, nft.tokenId]

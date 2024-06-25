@@ -1,6 +1,13 @@
-# Ourai's NTF Market
+# RaiGallery
 
-Ouraiverse in Web3 world.
+Exercise for creating an NFT market.
+
+This project is powered by:
+
+- [Solidity](https://soliditylang.org/) and [Hardhat](https://hardhat.org/) for smart contracts
+- [React](https://react.dev/), [Ant Design Web3](https://web3.ant.design/) and [Vite](https://vitejs.dev/) for web app
+
+For local development, Node.js 18+ and [pnpm](https://pnpm.io/) are recommended.
 
 ## License
 

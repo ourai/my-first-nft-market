@@ -2,7 +2,7 @@
 
 root = true
 
-[*.{yml,md,json,js,ts,tsx,sol}]
+[*.{yml,md,json,css,js,ts,tsx,sol}]
 charset = utf-8
 indent_style = space
 indent_size = 2

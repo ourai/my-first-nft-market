@@ -16,12 +16,12 @@ function App() {
       <Layout>
         <Layout.Header style={{ backgroundColor: '#ccc' }}>
           <Flex align="center" justify="space-between" style={containerStyle}>
-            <div style={{ fontSize: 24 }}>Ouraiverse</div>
+            <div style={{ fontSize: 24 }}>RaiGallery</div>
             <Space>
               <SellButton />
               <MintButton />
               <Connector modalProps={{ mode: 'simple' }}>
-                <ConnectButton size="large" />
+                <ConnectButton size="large" profileModal={false} actionsMenu />
               </Connector>
             </Space>
           </Flex>
