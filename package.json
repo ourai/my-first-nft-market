@@ -4,11 +4,13 @@
   "description": "Exercise for creating an NFT market",
   "private": true,
   "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.78.0",
     "@knosys/sdk": "^0.0.3",
     "@ntks/toolbox": "^0.0.6",
     "ksio": "^0.0.3"
   },
   "scripts": {
+    "init": "node .knosys/scripts init",
     "start": "node .knosys/scripts serve",
     "test": "node .knosys/scripts test",
     "deploy": "node .knosys/scripts deploy"

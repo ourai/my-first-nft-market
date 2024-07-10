@@ -35,6 +35,11 @@ node_modules
 # Hardhat Ignition default folder for deployments against a local node
 /apps/chain/ignition/deployments
 
+# Graph CLI generated artifacts
+/apps/graph/build/
+/apps/graph/generated/
+
+.tmp
 dist
 dist-ssr
 *.local

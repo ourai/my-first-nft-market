@@ -9,14 +9,18 @@ function resolveAppPath(appDirName) {
 }
 
 function executeCommandInAppDir(appPath, cmd) {
-  return execSync(cmd, { cwd: appPath, stdio: 'inherit' })
+  return execSync(cmd, { cwd: appPath, stdio: 'inherit' });
 }
 
-function createAppScriptExecutor(handler, defaultApp = 'web') {
+function createAppScriptExecutor(handler, defaultApp = 'web', notExistsAllowed = false) {
   return (app = defaultApp, ...args) => {
+    if (!isFunction(handler)) {
+      return;
+    }
+
     const appPath = resolveAppPath(app);
 
-    if (!existsSync(appPath) || !isFunction(handler)) {
+    if (notExistsAllowed !== true && !existsSync(appPath)) {
       return;
     }
 
